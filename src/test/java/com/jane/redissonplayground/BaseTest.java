@@ -4,6 +4,7 @@ package com.jane.redissonplayground;
 import com.jane.redissonplayground.config.RedissonConfig;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestInstance;
 import org.redisson.api.RedissonReactiveClient;
 
@@ -14,7 +15,7 @@ public abstract class BaseTest {
     protected RedissonReactiveClient client;
 
     @BeforeAll
-    void setup() {
+    protected void setup() {
         this.client = this.radissonConfig.getReactiveClient();
     }
     @AfterAll
